@@ -1,0 +1,84 @@
+# English translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <hola@latorregabriel.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-24 18:04-0300\n"
+"PO-Revision-Date: 2025-01-24 18:06-0300\n"
+"Last-Translator:  <hola@latorregabriel.com>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bot.py:59
+msgid ""
+"Welcome to the Star Wars Dice Roller bot!\n"
+"Use /roll <dice_input> to roll your dice.\n"
+"Use /language <en|es> to set your language.\n"
+"Use /list_dice to see available dice options.\n"
+"Example: /roll 2ca,2pe,3di,1be,2co"
+msgstr ""
+"Welcome to the Star Wars Dice Roller bot!\n"
+"Use /roll <dice_input> to roll your dice.\n"
+"Use /language <en|es> to set your language.\n"
+"Use /list_dice to see available dice options.\n"
+"Example: /roll 2ca,2pe,3di,1be,2co"
+
+#: bot.py:92
+msgid "Ability (ca)"
+msgstr "Ability (ca)"
+
+#: bot.py:93
+msgid "Proficiency (pe)"
+msgstr "Proficiency (pe)"
+
+#: bot.py:94
+msgid "Difficulty (di)"
+msgstr "Difficulty (di)"
+
+#: bot.py:95
+msgid "Challenge (de)"
+msgstr "Challenge (de)"
+
+#: bot.py:96
+msgid "Boost (be)"
+msgstr "Boost (be)"
+
+#: bot.py:97
+msgid "Setback (co)"
+msgstr "Setback (co)"
+
+#: bot.py:98
+msgid "Force (fu)"
+msgstr "Force (fu)"
+
+#: bot.py:101
+msgid "Available dice options:\n"
+msgstr "Available dice options:\n"
+
+#: bot.py:128
+msgid "🎲 **Individual Rolls:**\n"
+msgstr "🎲 **Individual Rolls:**\n"
+
+#: bot.py:132
+msgid ""
+"\n"
+"**Final Results:**\n"
+msgstr ""
+"\n"
+"**Final Results:**\n"
+
+#: bot.py:168
+msgid "Usage: /language <en|es>"
+msgstr "Usage: /language <en|es>"
+
+#: bot.py:179
+msgid "Language set successfully."
+msgstr "Language set successfully."
