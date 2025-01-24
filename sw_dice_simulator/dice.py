@@ -53,13 +53,22 @@ def roll_dice(dice_pool):
             individual_rolls: list of individual dice rolls.
     """
     dice_faces = {
-        "ability": ["", "success", "success", "advantage", "success", "advantage", "advantage", "advantage"],
-        "proficiency": ["", "success", "success", "success", "success", "advantage", "success+advantage", "success+advantage", "advantage", "advantage", "advantage+advantage", "triumph"],
-        "difficulty": ["", "failure", "failure", "threat", "failure", "threat", "threat", "threat+threat"],
-        "challenge": ["", "failure", "failure", "failure", "failure", "threat", "failure+threat", "failure+threat", "threat", "threat", "threat+threat", "despair"],
-        "boost": ["", "", "success", "success+advantage", "advantage", "advantage"],
+        "ability": ["", "success", "success", "advantage", "success",
+                    "advantage", "advantage", "advantage"],
+        "proficiency": ["", "success", "success", "success", "success",
+                        "advantage", "success+advantage", "success+advantage",
+                        "advantage", "advantage", "advantage+advantage",
+                        "triumph"],
+        "difficulty": ["", "failure", "failure", "threat", "failure", "threat",
+                       "threat", "threat+threat"],
+        "challenge": ["", "failure", "failure", "failure", "failure", "threat",
+                      "failure+threat", "failure+threat", "threat", "threat",
+                      "threat+threat", "despair"],
+        "boost": ["", "", "success", "success+advantage", "advantage",
+                  "advantage"],
         "setback": ["", "", "failure", "failure", "threat", "threat"],
-        "force": ["dark", "dark", "dark", "dark", "dark", "dark", "dark", "dark", "light", "light", "light+light", "light+light"],
+        "force": ["dark", "dark", "dark", "dark", "dark", "dark", "dark",
+                  "dark", "light", "light", "light+light", "light+light"],
     }
 
     results = {
