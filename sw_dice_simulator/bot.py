@@ -21,6 +21,13 @@ bot_mode = "text"  # Default mode is text
 WHITELIST_FILE = "whitelist.txt"
 
 
+def get_translator_by_update(update):
+    user_id = update.effective_user.id
+    language = user_languages.get(user_id, "en")
+    translator = get_translation(language)
+    return translator
+
+
 def load_whitelist():
     """Loads the whitelist from a file."""
     try:
@@ -48,12 +55,14 @@ def is_user_allowed(update: Update, translator) -> bool:
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Sends a welcome message when the bot is started."""
-    translator = get_translation("en")
+    translator = get_translator_by_update(update)
     if not is_user_allowed(update, translator):
         return
 
     user_id = update.effective_user.id
-    user_languages[user_id] = "en"  # Default language is English
+    if user_id not in user_languages:
+        user_languages[user_id] = "en"  # Default language is English
+
     _ = translator.gettext
     await update.message.reply_text(
         _("Welcome to the Star Wars Dice Roller bot!\n"
@@ -67,7 +76,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def set_mode(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Sets the bot mode (text or picture)."""
     global bot_mode
-    translator = get_translation("en")
+
+    translator = get_translator_by_update(update)
+
     if not is_user_allowed(update, translator):
         return
 
@@ -81,9 +92,8 @@ async def set_mode(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def list_dice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Lists the possible dice options in the user's selected language."""
-    user_id = update.effective_user.id
-    language = user_languages.get(user_id, "en")
-    translator = get_translation(language)
+    translator = get_translator_by_update(update)
+
     if not is_user_allowed(update, translator):
         return
 
@@ -108,9 +118,9 @@ async def list_dice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handles dice rolling and sends the results."""
     global bot_mode
-    user_id = update.effective_user.id
-    language = user_languages.get(user_id, "en")
-    translator = get_translation(language)
+
+    translator = get_translator_by_update(update)
+
     if not is_user_allowed(update, translator):
         return
 
@@ -162,8 +172,10 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def set_language(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Sets the user's preferred language."""
-    translator = get_translation("en")
-    if not is_user_allowed(update, translator):
+    initial_translator = get_translation("en")  # Default to English translator
+    _ = initial_translator.gettext
+
+    if not is_user_allowed(update, initial_translator):
         return
 
     if not context.args or context.args[0].lower() not in ["en", "es"]:
@@ -176,8 +188,10 @@ async def set_language(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     user_id = update.effective_user.id
     user_languages[user_id] = language
 
+    # Get translator for the selected language
     translator = get_translation(language)
-    _ = translator.gettext
+    _ = translator.gettext  # Update the _ function to use the correct language
+
     await update.message.reply_text(
         _("Language set successfully.")
     )

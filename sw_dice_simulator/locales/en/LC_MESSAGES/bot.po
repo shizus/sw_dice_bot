@@ -33,31 +33,31 @@ msgstr ""
 
 #: bot.py:92
 msgid "Ability (ca)"
-msgstr "Ability (ca)"
+msgstr "Ability (ab) | Green"
 
 #: bot.py:93
 msgid "Proficiency (pe)"
-msgstr "Proficiency (pe)"
+msgstr "Proficiency (pr) | Yellow"
 
 #: bot.py:94
 msgid "Difficulty (di)"
-msgstr "Difficulty (di)"
+msgstr "Difficulty (di) |Purple"
 
 #: bot.py:95
 msgid "Challenge (de)"
-msgstr "Challenge (de)"
+msgstr "Challenge (ch) | Red"
 
 #: bot.py:96
 msgid "Boost (be)"
-msgstr "Boost (be)"
+msgstr "Boost (bo) | Blue"
 
 #: bot.py:97
 msgid "Setback (co)"
-msgstr "Setback (co)"
+msgstr "Setback (se) | Black"
 
 #: bot.py:98
 msgid "Force (fu)"
-msgstr "Force (fu)"
+msgstr "Force (fo) | White"
 
 #: bot.py:101
 msgid "Available dice options:\n"
