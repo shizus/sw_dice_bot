@@ -112,4 +112,10 @@ def roll_from_string(dice_input):
             individual_rolls: list of individual dice rolls.
     """
     dice_pool = parse_dice_input(dice_input)
-    return roll_dice(dice_pool)
+    results, individual_rolls = roll_dice(dice_pool)
+
+    # Filter results to only include counts greater than 0
+    filtered_results = {symbol: count for symbol, count in results.items()
+                        if count > 0}
+
+    return filtered_results, individual_rolls
