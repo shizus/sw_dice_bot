@@ -1,0 +1,36 @@
+{
+    "en": {
+        "success": "Success",
+        "advantage": "Advantage",
+        "triumph": "Triumph",
+        "failure": "Failure",
+        "threat": "Threat",
+        "despair": "Despair",
+        "light": "Light Side",
+        "dark": "Dark Side",
+        "ability": "Ability (green)",
+        "proficiency": "Proficiency (yellow)",
+        "difficulty": "Difficulty (purple)",
+        "challenge": "Challenge (red)",
+        "boost": "Boost (blue)",
+        "setback": "Setback (black)",
+        "force": "Force (white)"
+    },
+    "es": {
+        "success": "Éxito",
+        "advantage": "Ventaja",
+        "triumph": "Triunfo",
+        "failure": "Fallo",
+        "threat": "Amenaza",
+        "despair": "Desesperación",
+        "light": "Lado Luminoso",
+        "dark": "Lado Oscuro",
+        "ability": "Capacidad (verde)",
+        "proficiency": "Pericia (amarillo)",
+        "difficulty": "Dificultad (púrpura)",
+        "challenge": "Desafío (rojo)",
+        "boost": "Beneficio (azul)",
+        "setback": "Complicación (negro)",
+        "force": "Fuerza (blanco)"
+    }
+}
