@@ -59,7 +59,7 @@ def roll_dice(dice_pool):
         "proficiency": [
                         "advantage+advantage",
                         "advantage",
-                        "advantage+advantage", "triumph"
+                        "advantage+advantage", "triumph",
                         "success",
                         "success+advantage",
                         "success",
@@ -110,6 +110,7 @@ def roll_dice(dice_pool):
         "despair": 0,
         "light": 0,
         "dark": 0,
+        "blank": 0,
     }
 
     individual_rolls = []

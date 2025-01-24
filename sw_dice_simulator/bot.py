@@ -123,6 +123,8 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         results, individual_rolls = roll_from_string(dice_input)
         _ = translator.gettext
 
+        response = ""
+
         if bot_mode == "text":
             # Prepare the response in text mode
             response = _("🎲 **Individual Rolls:**\n")
