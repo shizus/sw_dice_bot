@@ -3,7 +3,7 @@ import gettext
 import random
 from telegram import Update, InputFile
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-from sw_dice_simulator.dice import roll_from_string
+from dice import roll_from_string
 
 # Load translations
 localedir = os.path.join(os.path.dirname(__file__), "locales")
@@ -36,13 +36,13 @@ WHITELIST = load_whitelist()
 
 def is_user_allowed(update: Update, translator) -> bool:
     """Checks if the user is in the whitelist."""
-    username = update.effective_user.username
-    if username not in WHITELIST:
-        _ = translator.gettext
-        update.message.reply_text(
-            _("I'm sorry, you're not subscribed. Go to swdicebot.matesncode.com to subscribe.")
-        )
-        return False
+    # username = update.effective_user.username
+    # if username not in WHITELIST:
+    #     _ = translator.gettext
+    #     update.message.reply_text(
+    #         _("I'm sorry, you're not subscribed. Go to swdicebot.matesncode.com to subscribe.")
+    #     )
+    #     return False
     return True
 
 
@@ -129,12 +129,6 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             for roll in individual_rolls:
                 response += f"- {roll['dice_type']}: {roll['result']}\n"
 
-            response += _("\n**Final Results:**\n")
-            for symbol, count in results.items():
-                response += f"- {symbol}: {count}\n"
-
-            await update.message.reply_text(response)
-
         elif bot_mode == "picture":
             # Send pictures for each individual roll
             for roll in individual_rolls:
@@ -142,7 +136,8 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 result = roll['result']
 
                 # Find the corresponding folder and images
-                folder_path = os.path.join("dices", dice_type, result)
+                BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+                folder_path = os.path.join(BASE_DIR, "dices", dice_type, result)
                 if os.path.exists(folder_path):
                     images = os.listdir(folder_path)
                     if images:
@@ -152,6 +147,12 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                             await update.message.reply_photo(InputFile(image_file))
                 else:
                     await update.message.reply_text(f"No image found for {dice_type} - {result}")
+
+        response += _("\n**Final Results:**\n")
+        for symbol, count in results.items():
+            response += f"- {symbol}: {count}\n"
+
+        await update.message.reply_text(response)
 
     except Exception as e:
         await update.message.reply_text(f"Error: {str(e)}")
