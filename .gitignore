@@ -88,3 +88,5 @@ dmypy.json
 # IDEs
 .idea/
 .vscode/
+
+*.png
