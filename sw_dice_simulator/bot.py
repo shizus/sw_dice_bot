@@ -139,7 +139,10 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             # Prepare the response in text mode
             response = _("🎲 **Individual Rolls:**\n")
             for roll in individual_rolls:
-                response += f"- {roll['dice_type']}: {roll['result']}\n"
+                roll_result_text = []
+                for result in roll["result"].split("+"):
+                    roll_result_text.append(_(result))
+                response += f"- {_(roll['dice_type'])}: {'+'.join(roll_result_text)}\n"
 
         elif bot_mode == "picture":
             # Send pictures for each individual roll
@@ -162,7 +165,7 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
         response += _("\n**Final Results:**\n")
         for symbol, count in results.items():
-            response += f"- {symbol}: {count}\n"
+            response += f"- {_(symbol)}: {count}\n"
 
         await update.message.reply_text(response)
 

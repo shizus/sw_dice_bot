@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 18:04-0300\n"
-"PO-Revision-Date: 2025-01-24 18:08-0300\n"
+"PO-Revision-Date: 2025-01-24 19:49-0300\n"
 "Last-Translator:  <hola@latorregabriel.com>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -25,11 +25,6 @@ msgid ""
 "Use /list_dice to see available dice options.\n"
 "Example: /roll 2ca,2pe,3di,1be,2co"
 msgstr ""
-"¡Bienvenido al bot de tiradas de dados de Star Wars!\n"
-"Usa /roll <dice_input> para tirar tus dados.\n"
-"Usa /language <en|es> para configurar tu idioma.\n"
-"Usa /list_dice para ver las opciones de dados disponibles.\n"
-"Ejemplo: /roll 2ca,2pe,3di,1be,2co"
 
 #: bot.py:92
 msgid "Ability (ca)"
@@ -82,3 +77,53 @@ msgstr "Uso: /language <en|es>"
 #: bot.py:179
 msgid "Language set successfully."
 msgstr "Idioma configurado con éxito."
+
+#: bot.py 142
+msgid "success"
+msgstr "éxito"
+
+msgid "failure"
+msgstr "fallo"
+
+msgid "threat"
+msgstr "amenaza"
+
+msgid "advantage"
+msgstr "ventaja"
+
+msgid "triumph"
+msgstr "triunfo"
+
+msgid "despair"
+msgstr "desesperación"
+
+msgid "light"
+msgstr "luz"
+
+msgid "dark"
+msgstr "oscuridad"
+
+msgid "blank"
+msgstr "vacío"
+
+#: dice.py:14
+msgid "ability"
+msgstr "capacidad"
+
+msgid "proficiency"
+msgstr "pericia"
+
+msgid "difficulty"
+msgstr "dificultad"
+
+msgid "challenge"
+msgstr "desafío"
+
+msgid "boost"
+msgstr "beneficio"
+
+msgid "setback"
+msgstr "complicación"
+
+msgid "force"
+msgstr "fuerza"

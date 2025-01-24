@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 18:04-0300\n"
-"PO-Revision-Date: 2025-01-24 18:06-0300\n"
+"PO-Revision-Date: 2025-01-24 19:49-0300\n"
 "Last-Translator:  <hola@latorregabriel.com>\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -82,3 +82,53 @@ msgstr "Usage: /language <en|es>"
 #: bot.py:179
 msgid "Language set successfully."
 msgstr "Language set successfully."
+
+#: bot.py 142
+msgid "success"
+msgstr "success"
+
+msgid "failure"
+msgstr "failure"
+
+msgid "threat"
+msgstr "threat"
+
+msgid "advantage"
+msgstr "advantage"
+
+msgid "triumph"
+msgstr "triumph"
+
+msgid "despair"
+msgstr "despair"
+
+msgid "light"
+msgstr "light"
+
+msgid "dark"
+msgstr "dark"
+
+msgid "blank"
+msgstr "blank"
+
+#: dice.py:14
+msgid "ability"
+msgstr "ability"
+
+msgid "proficiency"
+msgstr "proficiency"
+
+msgid "difficulty"
+msgstr "difficulty"
+
+msgid "challenge"
+msgstr "challenge"
+
+msgid "boost"
+msgstr "boost"
+
+msgid "setback"
+msgstr "setback"
+
+msgid "force"
+msgstr "force"
