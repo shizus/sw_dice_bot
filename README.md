@@ -115,7 +115,7 @@ To restrict access to specific users, add their Telegram usernames to the `white
 
 ### Text and Image Modes
 - **Text Mode**: Displays roll results in plain text.
-- **Image Mode**: Displays dice rolls as images. Images are stored in the `dices/` directory, with a folder for each dice type and its results.
+- **Image Mode**: Displays dice rolls as images. Images are stored in the `dices/` directory, with a folder for each dice type and its results. I'm sorry but, due to copyright considerations, dice images are not included in the repository. Please add your own images for the dice results.
 
 ---
 
