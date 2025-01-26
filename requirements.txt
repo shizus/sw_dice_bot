@@ -1,1 +1,1 @@
-Babel==2.9.1
+python-telegram-bot==20.0
